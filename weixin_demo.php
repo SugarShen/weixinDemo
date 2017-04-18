@@ -4,6 +4,15 @@
 
 	define("TOKEN", "weixin");
 
+	$wechatObj = new weixinResponse();
+
+	if(!isset($_GET['echostr']){
+		$wechatObj->responseMsg();
+	}else{
+		$wechatObj->valid();
+	}
+
+
 
 	class weixinResponse{
 
