@@ -6,11 +6,11 @@
 
 	$wechatObj = new weixinResponse();
 
-	if(!isset($_GET['echostr'])){
+//	if(!isset($_GET['echostr'])){
 //		$wechatObj->responseMsg();
-	}else{
+//	}else{
 		$wechatObj->valid();
-	}
+//	}
 
 
 
