@@ -2,12 +2,12 @@
 
 	header("Content-type:text/html;charset=utf-8");
 
-	define("TOKEN", "weixin");
+	define("TOKEN", "shenjiawei");
 
 	$wechatObj = new weixinResponse();
 
-	if(!isset($_GET['echostr']){
-		$wechatObj->responseMsg();
+	if(!isset($_GET['echostr'])){
+//		$wechatObj->responseMsg();
 	}else{
 		$wechatObj->valid();
 	}
@@ -42,39 +42,39 @@
 
 		}
 
-		public function responseMsg(){
-
-			//接收xml数据包
-			$postStr = $HTTP_ROW_POST_DATA;
-			//如果接收为空
-			if(empty($postStr)){
-				echo "error";
-				exit();
-			}
-
-			//把xml数据包转换成对象
-			$object = simplexml_load_string($postStr,'SimpleXMLElement',LIBXML_NOCDATA);
-			//事件类型
-			$RX_TYPE = trim($object->MsgType);
-
-			//选择消息类型做处理
-			switch ($RX_TYPE) {
-				case 'event':
-					$result = $this->receiveEvent($object);
-					break;
-				
-				default:
-					# code...
-					break;
-			}
-
-
-		}
-
-
-		public function receiveEvent($obj){
-
-		}
+//		public function responseMsg(){
+//
+//			//接收xml数据包
+//			$postStr = $HTTP_ROW_POST_DATA;
+//			//如果接收为空
+//			if(empty($postStr)){
+//				echo "error";
+//				exit();
+//			}
+//
+//			//把xml数据包转换成对象
+//			$object = simplexml_load_string($postStr,'SimpleXMLElement',LIBXML_NOCDATA);
+//			//事件类型
+//			$RX_TYPE = trim($object->MsgType);
+//
+//			//选择消息类型做处理
+//			switch ($RX_TYPE) {
+//				case 'event':
+//					$result = $this->receiveEvent($object);
+//					break;
+//
+//				default:
+//					# code...
+//					break;
+//			}
+//
+//
+//		}
+//
+//
+//		public function receiveEvent($obj){
+//
+//		}
 	}
 
 
